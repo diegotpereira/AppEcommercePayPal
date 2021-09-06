@@ -1,0 +1,9 @@
+<button mat-stroked-button [matMenuTriggerFor]="menu" [disabled]="disabled">
+    {{quantity}}
+    <mat-icon *ngIf = "!disabled">expandir_mais</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+    <button *ngFor="let no of values" (click)="setQuantity(no)" mat-menu-item>
+        {{no}}
+    </button>
+</mat-menu>
