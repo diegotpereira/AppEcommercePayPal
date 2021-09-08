@@ -94,7 +94,7 @@ export class ProductComponent implements OnInit {
         );
       }
     } else {
-      this.snackBar.open('Select a quantity greater than 0.', 'Close', { duration: 8000 });
+      this.snackBar.open('Selecione uma quantidade maior que 0.', 'Close', { duration: 8000 });
     }
   }
 
@@ -107,10 +107,10 @@ export class ProductComponent implements OnInit {
   }
 
   private showSuccessSnackBar() {
-    this.snackBar.open('Item successfully added to cart.', 'Close', { duration: 8000 });
+    this.snackBar.open('Item adicionado ao carrinho com sucesso.', 'Close', { duration: 8000 });
   }
 
   private showErrorSnackBar() {
-    this.snackBar.open('Failed to add your item to the cart.', 'Close', { duration: 8000 });
+    this.snackBar.open('Falha ao adicionar seu item ao carrinho.', 'Close', { duration: 8000 });
   }
 }

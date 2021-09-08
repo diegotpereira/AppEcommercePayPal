@@ -1,0 +1,39 @@
+<form id="container" [formGroup]="signupForm" (ngSubmit)="signup()">
+  <h1 class="mat-display-3">Criar Conta</h1>
+  <mat-form-field appearance="outline">
+    <mat-label>Nome</mat-label>
+    <input matInput formControlName="firstName">
+    <mat-icon matPrefix>portrait</mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Sobrenome</mat-label>
+    <input matInput formControlName="lastName">
+    <mat-icon matPrefix>portrait</mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" type="email">
+    <mat-icon matPrefix>alernate_email</mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Senha</mat-label>
+    <input matInput formControlName="password" type="password">
+    <mat-icon matPrefix>vpn_key</mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Confirme a senha</mat-label>
+    <input matInput formControlName="confirmedPassword" type="password">
+    <mat-icon matPrefix>portrait</mat-icon>
+  </mat-form-field>
+  <div *ngIf="confirmedPassword?invalid && (confirmedPassword?.dirty || confirmedPassword?.touched">
+    <mat-error *ngIf="signForm.hasError('differentPasswords')">
+      Suas senhas não coincidem.
+    </mat-error>
+  </div>
+  <div *ngIf="password?invalid && (password?.dirty || password?.touched">
+    <mat-error *ngIf="password.hasError('minlength')">
+      Sua senha deve ter pelo menos 8 caracteres.
+    </mat-error>
+  </div>
+  <button mat-flat-button color="primary" [disabled]="!signupForm.valid">Inscrever-se</button>
+</form>
