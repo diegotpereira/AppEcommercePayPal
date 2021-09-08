@@ -55,51 +55,51 @@ export class ProductComponent implements OnInit {
   }
 
   addItemToCart() {
-    if (this.quantity > 0) {
-      if (this.cart.orderId == '') {
-        this.orders.createOrder()
-          .pipe(
-            mergeMap((order: Order) => {
-              this.cart.orderId = order.id || '';
+  //   if (this.quantity > 0) {
+  //     if (this.cart.orderId == '') {
+  //       this.orders.createOrder()
+  //         .pipe(
+  //           mergeMap((order: Order) => {
+  //             this.cart.orderId = order.id || '';
 
-              return this.lineItems.createLineItem({
-                orderId: order.id,
-                name: this.product.name,
-                imageUrl: this.product.imageUrl,
-                quantity: this.quantity,
-                skuCode: this.product.code
-              });
-            })
-          )
-          .subscribe(
-            () => {
-              this.cart.incrementItemCount(this.quantity);
-              this.showSuccessSnackBar();
-            },
-            err => this.showErrorSnackBar()
-          );
-      } else {
-        this.lineItems.createLineItem({
-          orderId: this.cart.orderId,
-          name: this.product.name,
-          imageUrl: this.product.imageUrl,
-          quantity: this.quantity,
-          skuCode: this.product.code
-        }).subscribe(
-          () => {
-            this.cart.incrementItemCount(this.quantity);
-            this.showSuccessSnackBar();
-          },
-          err => this.showErrorSnackBar()
-        );
-      }
-    } else {
-      this.snackBar.open('Select a quantity greater than 0.', 'Close', { duration: 8000 });
-    }
-  }
+  //             return this.lineItems.createLineItem({
+  //               orderId: order.id,
+  //               name: this.product.name,
+  //               imageUrl: this.product.imageUrl,
+  //               quantity: this.quantity,
+  //               skuCode: this.product.code
+  //             });
+  //           })
+  //         )
+  //         .subscribe(
+  //           () => {
+  //             this.cart.incrementItemCount(this.quantity);
+  //             this.showSuccessSnackBar();
+  //           },
+  //           err => this.showErrorSnackBar()
+  //         );
+  //     } else {
+  //       this.lineItems.createLineItem({
+  //         orderId: this.cart.orderId,
+  //         name: this.product.name,
+  //         imageUrl: this.product.imageUrl,
+  //         quantity: this.quantity,
+  //         skuCode: this.product.code
+  //       }).subscribe(
+  //         () => {
+  //           this.cart.incrementItemCount(this.quantity);
+  //           this.showSuccessSnackBar();
+  //         },
+  //         err => this.showErrorSnackBar()
+  //       );
+  //     }
+  //   } else {
+  //     this.snackBar.open('Select a quantity greater than 0.', 'Close', { duration: 8000 });
+  //   }
+  // }
 
-  setQuantity(no: number) {
-    this.quantity = no;
+  // setQuantity(no: number) {
+  //   this.quantity = no;
   }
 
   goBack() {

@@ -1,0 +1,8 @@
+<app-title no="2" title="Billing Address" subtitle="Endereço para faturar despesas para"></app-title>
+<app-address-list *ngIf="showAddresses" (setAddressEvent)="setCustomerAddress($envent)">
+
+</app-address-list>
+
+<mat-divider *ngIf="showAddresses"></mat-divider>
+<app-address [showTitle]="showAdrresses" buttonText="PROSSEGUIR PARA A PRÓXIMA ETAPA" checkboxText="
+Enviar para o mesmo endereço" (isCheckboxChecked)="setSameShippingAddressAsBilling($event)" (createAddress)="updateBillingAddress($event)"></app-address>

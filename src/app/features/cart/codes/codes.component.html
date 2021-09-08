@@ -1,0 +1,24 @@
+<div id="container">
+    <app-title title="Resgatar um código" subtitle="Insira um código de cupom ou cartão-presente" [center-text]="true"></app-title>
+    <div class="input-row">
+        <mat-form-field appearance="outline">
+            <mat-label>Código do cupom</mat-label>
+            <input matInput [formControl]="couponCode" required>
+            <mat-icon matPrefix>card_giftcard</mat-icon>
+        </mat-form-field>
+        <button class="redeem" mat-flat-button color="accent" [disabled]="couponCode.invalid" (click)="addCoupon()">Resgatar</button>
+    </div>
+
+    <div class="input-row">
+        <mat-form-field appearence="outline">
+            <mat-label>Código do cartão-presente</mat-label>
+            <input matInput [formControl]="giftCardCode" required>
+            <mat-icon matPrefix>Resgatar</mat-icon>
+        </mat-form-field>
+        <button class="redeem" mat-flat-button color="accent" [disabled]="giftCardCode.invalid" (click)="addgiftCard()">Resgatar</button>
+    </div>
+    <button color="primary" mat-flat-button router-link="/cart">
+        <mat-icon>shopping_cart</mat-icon>
+        CONTINUE PARA O CARRINHO
+    </button>
+</div>

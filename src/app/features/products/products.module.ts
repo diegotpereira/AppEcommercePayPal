@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
-import { ProductComponent } from './pages/product/product.component';
-import { ProductListComponent } from './pages/product-list/product-list.component';
+import { ProductComponent } from './product/product.component';
+import { ProductListComponent } from './product-list/product-list.component';
 import { RouterModule } from '@angular/router';
 import { LayoutModule } from '@angular/cdk/layout';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
-
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({

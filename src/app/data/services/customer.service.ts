@@ -26,4 +26,14 @@ export class CustomerService {
     lastName: lastName
    }).pipe(catchError(this.eh.handleError));
   }
+
+  getCurrentCustomer(): Observable<Customer> {
+    return this.http.get<Customer>(`${this.url}/current`)
+      .pipe(catchError(this.eh.handleError));
+  }
+
+  getCustomer(id: string): Observable<Customer> {
+    return this.http.get<Customer>(`${this.url}/${id}`)
+      .pipe(catchError(this.eh.handleError));
+  }
 }

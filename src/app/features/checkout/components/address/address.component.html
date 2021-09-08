@@ -1,0 +1,59 @@
+<form id="container" [formGroup]="addressForm">
+    <p class="mat-headline" *ngIf="showTitle">Ou adicione um novo endereço</p>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="firstName">
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Sobrenome</mat-label>
+            <input matInput formControlName="lastName">
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Endereço</mat-label>
+            <input matInput formControlName="line1">
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Cidade</mat-label>
+            <input matInput formControlName="cidade">
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="firstName">
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Estado</mat-label>
+            <input matInput formControlName="stateCode">
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Cep</mat-label>
+            <input matInput formControlName="zipCode">
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Telefone</mat-label>
+            <input matInput formControlName="phone">
+        </mat-form-field>
+        <app-country-select (setCountryEvent)="setCountryCode($event)"></app-country-select>
+    </div>
+    <mat-checkbox color="accent" (change)="setCheckboxValue($event)">
+        {{checkboxText}}
+    </mat-checkbox>
+    <button id="submit-button" mat-flat-button color="primary" (click)="addAddress">
+        {{buttonText}}
+    </button>
+</form>

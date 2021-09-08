@@ -1,0 +1,11 @@
+<div id="container">
+    <app-title no="1" title="Customer" subtitle="Informações de faturamento e endereço de entrega"></app-title>
+    <mat-form-field appearence="outline">
+        <mat-label>Email</mat-label>
+        <input matInput [formControl]="email" required>
+        <mat-icon matPrefix>alternate_email</mat-icon>
+    </mat-form-field>
+    <button mat-flat-button color="primary" [disabled]="email.invalid" (click)="addCustomerEmail()">
+        PROSSEGUIR PARA O ENDEREÇO ​​DE FATURAMENTO
+    </button>
+</div>

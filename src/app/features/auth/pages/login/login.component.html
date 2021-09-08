@@ -1,1 +1,20 @@
-<p>login works!</p>
+<form id="container" [formGroup]="loginForm" (ngSubmit)="login">
+    <h1 class="mat-display-3">Entrar</h1>
+    <mat-form-field appearence="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" required>
+        <mat-icon matPrefix>alternate_email</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearence="outline">
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" formControlName="password" required>
+        <mat-icon matPrefix>vpn_key</mat-icon>
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" [disabled]="!loginForm.valid">Entrar</button>
+    <p id="newAccount" class="mat-h3">Ainda não está registrado?
+        <a id="newAccountLink" router-link="/signup">Crie a sua conta aqui.</router-link>
+    </p>
+
+</form>
