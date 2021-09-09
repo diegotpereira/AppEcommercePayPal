@@ -27,7 +27,7 @@ export class SignupComponent implements OnInit {
     private customer: CustomerService,
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
-    private router, Router,
+    private router: Router,
     private header: HeaderService
   ) { }
 
