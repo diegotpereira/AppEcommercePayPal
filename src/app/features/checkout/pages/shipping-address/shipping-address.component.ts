@@ -5,7 +5,7 @@ import { combineLatest, concat, iif, Observable } from 'rxjs';
 import { concatMap } from 'rxjs/operators';
 import { SessionService } from 'src/app/core/services/session.service';
 import { Address } from 'src/app/data/models/address';
-import { AddressService } from 'src/app/data/services/AddressService';
+import { AddressService } from 'src/app/data/services/Address.Service';
 import { CartService } from 'src/app/data/services/cart.service';
 import { CustomerAddressService } from 'src/app/data/services/customer-address.service';
 import { OrderService } from 'src/app/data/services/order.service';
@@ -33,7 +33,7 @@ export class ShippingAddressComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-    this.session.loggedInStatus.subscribe(status => this.showAddress = status);
+    this.session.loggedInStatus$.subscribe(status => this.showAddress = status);
   }
 
   updateShippingAddress(address: Address) {

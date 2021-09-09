@@ -13,7 +13,7 @@ export class SessionService {
   private url: string = `${environment.apiUrl}/session`;
   private isLoggedIn = new BehaviorSubject(false);
 
-  loggedInStatus = this.isLoggedIn.asObservable();
+  loggedInStatus$ = this.isLoggedIn.asObservable();
 
   constructor(
     private http: HttpClient,

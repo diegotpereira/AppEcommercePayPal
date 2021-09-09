@@ -16,11 +16,11 @@ export class CountrySelectComponent implements OnInit {
   @Output() setCountryEvent = new EventEmitter<string>(); 
 
   constructor(
-    private countries: CountryService
+    private countriesServ: CountryService
   ) { }
 
   ngOnInit(){
-    this.countries.getCountries().subscribe(countries => {
+    this.countriesServ.getCountries().subscribe(countries => {
       this.countries = countries;
     });
   }

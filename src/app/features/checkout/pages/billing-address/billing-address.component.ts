@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { combineLatest, iif, Observable } from 'rxjs';
+import { UntilDestroy } from '@ngneat/until-destroy';
+import { combineLatest, iif, Observable, concat } from 'rxjs';
 import { concatMap } from 'rxjs/operators';
 import { SessionService } from 'src/app/core/services/session.service';
 import { Address } from 'src/app/data/models/address';
 import { Order, UpdateOrderParams } from 'src/app/data/models/order';
+import { AddressService } from 'src/app/data/services/Address.Service';
 import { CartService } from 'src/app/data/services/cart.service';
 import { CustomerAddressService } from 'src/app/data/services/customer-address.service';
 import { OrderService } from 'src/app/data/services/order.service';
 
+@UntilDestroy({ checkProperties: true })
 @Component({
   selector: 'app-billing-address',
   templateUrl: './billing-address.component.html',
@@ -33,7 +36,7 @@ export class BillingAddressComponent implements OnInit {
   ) { }
   
   ngOnInit() {
-    this.session.loggedInStatus.subscribe(status => this.showAddresses = status);
+    this.session.loggedInStatus$.subscribe(status => this.showAddresses = status);
   }
 
   updateBillingAddress(address: Address) {
@@ -65,7 +68,7 @@ export class BillingAddressComponent implements OnInit {
       }else {
         return update;
       }
-    })).subscribe(() => this.showAddresses(),
+    })).subscribe(() => this.showSuccessSnackBar(),
        err=> this.showErrorSnackBar());
   }
 
