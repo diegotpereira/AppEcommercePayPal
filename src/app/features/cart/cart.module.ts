@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CodesComponent } from './codes/codes.component';
-import { EmptyComponent } from './empty/empty.component';
-import { SummaryComponent } from './summary/summary.component';
+import { CodesComponent } from './pages/codes/codes.component';
+import { EmptyComponent } from './pages/empty/empty.component';
+import { SummaryComponent } from './pages/summary/summary.component';
 import { RouterModule } from '@angular/router';
 import { EmptyCartGuard } from 'src/app/core/guards/empty-cart.guard';
 
