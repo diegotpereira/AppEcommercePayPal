@@ -15,8 +15,19 @@
         <mat-radio-group [formControlName]="shipment?.id || j">
             <mat-radio-button *ngFor="let method of shipment.availableShippingMethods" [value]="method.id">
                 <div class="radio-button">
-
+                  <p>{{method.name}}</p>
+                  <div>
+                    <p class="radio-label">Custo: </p>
+                    <p>&nbsp;{{method.formattedPriceAmount}}</p>
+                  </div>
+                   <div>
+                      <p class="radio-label">Linha do tempo: </p>
+                      <p>&nbsp;Disponível em {{method.deliveryLeadTime?.minDays}}-{{method.deliveryLeadTime?.maxDays}} dias</p>
+                    </div>
                 </div>
             </mat-radio-button>
+        </mat-radio-group>
+        <mat-divider *ngIf="!isLast"></mat-divider>
     </div>
+    <button mat-flat-button color="primary" [disabled]="shipmentsForm.invalid" (click)="setShipmentMethods()">PROSSIGA PARA O PAGAMENTO</button>
 </form>
