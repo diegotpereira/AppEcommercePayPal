@@ -23,14 +23,14 @@
   <mat-form-field appearance="outline">
     <mat-label>Confirme a senha</mat-label>
     <input matInput formControlName="confirmedPassword" type="password">
-    <mat-icon matPrefix>portrait</mat-icon>
+    <mat-icon matPrefix>vpn_key</mat-icon>
   </mat-form-field>
-  <div *ngIf="confirmedPassword?invalid && (confirmedPassword?.dirty || confirmedPassword?.touched">
-    <mat-error *ngIf="signForm.hasError('differentPasswords')">
+  <div *ngIf="confirmedPassword?.invalid && (confirmedPassword?.dirty || confirmedPassword?.touched)">
+    <mat-error *ngIf="signupForm.hasError('differentPasswords')">
       Suas senhas não coincidem.
     </mat-error>
   </div>
-  <div *ngIf="password?invalid && (password?.dirty || password?.touched">
+  <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
     <mat-error *ngIf="password.hasError('minlength')">
       Sua senha deve ter pelo menos 8 caracteres.
     </mat-error>
