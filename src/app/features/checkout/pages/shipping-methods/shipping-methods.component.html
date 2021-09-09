@@ -13,6 +13,10 @@
             </div>
         </div>
         <mat-radio-group [formControlName]="shipment?.id || j">
-            <mat-radio-button *n </mat-radio-group>
+            <mat-radio-button *ngFor="let method of shipment.availableShippingMethods" [value]="method.id">
+                <div class="radio-button">
+
+                </div>
+            </mat-radio-button>
     </div>
 </form>
