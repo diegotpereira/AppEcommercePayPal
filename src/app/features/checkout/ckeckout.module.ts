@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { CustomerComponent } from './pages/customer/customer.component';
 import { AddressComponent } from './components/address/address.component';
 import { BillingAddressComponent } from './pages/billing-address/billing-address.component';
@@ -19,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -28,6 +28,7 @@ import { MatRadioModule } from '@angular/material/radio';
     ShippingAddressComponent,
     ShippingMethodsComponent,
     PaymentComponent,
+    PlaceOrderComponent,
     AddressListComponent,
     CountrySelectComponent,
     CancelPaymentComponent
@@ -47,6 +48,7 @@ import { MatRadioModule } from '@angular/material/radio';
 
     MatCardModule,
     MatCheckboxModule,
+    MatDividerModule,
     MatInputModule,
     MatMenuModule,
     MatRadioModule,

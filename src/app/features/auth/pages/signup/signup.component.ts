@@ -20,7 +20,7 @@ export class SignupComponent implements OnInit {
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(8)]],
     confirmedPassword: ['', [Validators.required]]
-  }, { Validators: this.matchPasswords});
+  }, { validators: this.matchPasswords});
 
   @ViewChild(FormGroupDirective) sufDirective: FormGroupDirective | undefined;
   constructor(
@@ -51,7 +51,8 @@ export class SignupComponent implements OnInit {
   }
 
   signup() {
-    const customer.createCustomer(
+    const customer = this.signupForm.value;
+    this.customer.createCustomer(
       customer.email,
       customer.password,
       customer.firstName,
@@ -62,7 +63,7 @@ export class SignupComponent implements OnInit {
 
       this.snackBar.open('Conta criada com sucesso.Você será redirecionado em 5 segundos.', 'Close', { duration: 5000});
 
-      setTimeout(() => this.router.navigationByUrl('/'), 6000);
+      setTimeout(() => this.router.navigateByUrl('/'), 6000);
     },
       err => this.snackBar.open('Ocorreu um problema ao criar sua conta.', 'Close', { duration: 5000}));
   }
