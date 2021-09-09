@@ -38,7 +38,8 @@ export class CodesComponent {
   addGiftCard() {
     this.updateOrder({ id: this.cart.orderId, giftCardCode: this.giftCardCode.value}, [UpdateOrderParams.giftCardCode], 'gift card');
   }
-  ngOnInit(): void {
-  }
 
+  addCoupon() {
+    this.updateOrder({ id: this.cart.orderId, couponCode: this.couponCode.value }, [UpdateOrderParams.couponCode], 'coupon');
+  }
 }

@@ -11,7 +11,7 @@ import { GetOrderParams } from 'src/app/data/models/order';
 import { Shipment } from 'src/app/data/models/shipment';
 import { CartService } from 'src/app/data/services/cart.service';
 import { DeliveryLeadTimeService } from 'src/app/data/services/delivery-lead-time.service';
-
+import { ShippingMethod } from 'src/app/data/models/shipping-method';
 import { OrderService } from 'src/app/data/services/order.service';
 import { ShipmentService } from 'src/app/data/services/shipment.service';
 
@@ -74,7 +74,7 @@ export class ShippingMethodsComponent implements OnInit {
   setShipmentMethods() {
     const shipmentsFormValue = this.shipmentsForm.value;
 
-    combineLatest(Object.keys(shipmentsFormValue).map(key => this.shipmentServ.updateShipment(key, shipmentsFormValue[key]).subscribe(() => {
+    combineLatest(Object.keys(shipmentsFormValue).map(key => this.shipmentServ.updateShipment(key, shipmentsFormValue[key]))).subscribe(() => {
       this.snackBar.open('Suas remessas foram atualizadas com um método de remessa.', 'Close', { duration: 3000});
       setTimeout(() => this.router.navigateByUrl('/payment'), 4000);
     },

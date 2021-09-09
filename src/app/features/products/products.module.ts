@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { ProductComponent } from './product/product.component';
-import { ProductListComponent } from './product-list/product-list.component';
+import { ProductComponent } from './pages/product/product.component';
+import { ProductListComponent } from './pages/product-list/product-list.component';
 import { RouterModule } from '@angular/router';
 import { LayoutModule } from '@angular/cdk/layout';
 

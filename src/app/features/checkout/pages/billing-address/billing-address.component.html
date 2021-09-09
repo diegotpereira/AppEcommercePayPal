@@ -4,5 +4,5 @@
 </app-address-list>
 
 <mat-divider *ngIf="showAddresses"></mat-divider>
-<app-address [showTitle]="showAdrresses" buttonText="PROSSEGUIR PARA A PRÓXIMA ETAPA" checkboxText="
-Enviar para o mesmo endereço" (isCheckboxChecked)="setSameShippingAddressAsBilling($event)" (createAddress)="updateBillingAddress($event)"></app-address>
+<app-address [showTitle]="showAddresses" buttonText="PROSSEGUIR PARA A PRÓXIMA ETAPA" checkboxText="
+Enviar para o mesmo endereço" (isCheckboxChecked)="setSameShippingAddressBilling($event)" (createAddress)="updateBillingAddress($event)"></app-address>
