@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
       this.isLoggedIn = true;
       this.session.setLoggedInStatus(true);
     });
-    this.session.loggedInStatus.subscribe(status => this.isLoggedIn = status);
+    this.session.loggedInStatus$.subscribe(status => this.isLoggedIn = status);
     this.header.showHeaderButtons.subscribe(visible => this.showButtons = visible);
     this.cart.cartValue$.subscribe(cart => this.cartAmount = cart.itemCount);
   }

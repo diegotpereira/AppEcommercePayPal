@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './simple-page.component.html',
   styleUrls: ['./simple-page.component.css']
 })
-export class SimplePageComponent implements OnInit {
+export class SimplePageComponent {
 
   @Input() title: string = '';
   @Input() subtitle?: string;
@@ -30,8 +30,4 @@ export class SimplePageComponent implements OnInit {
       this.buttonEvent.emit();
     }
   }
-
-  ngOnInit(): void {
-  }
-
 }

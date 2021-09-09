@@ -34,7 +34,7 @@ enum GetOrderParams {
     paymentSource = 'withPaymentSource',
     paymentMethod = 'withPaymentMethod',
     shipments = 'withShipments',
-    nome = 'none'
+    none = 'none'
 }
 
 enum UpdateOrderParams {
