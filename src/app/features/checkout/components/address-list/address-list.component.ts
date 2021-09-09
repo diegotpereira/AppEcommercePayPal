@@ -23,7 +23,7 @@ export class AddressListComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-    this.session.loggedInStatus.pipe(mergeMap(
+    this.session.loggedInStatus$.pipe(mergeMap(
       status => iif(() => status, this.customerAddresses.getCustomerAddresses())
     )).subscribe( addresses => {
       if (addresses.length) {
